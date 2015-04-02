@@ -1,0 +1,22 @@
+<%= notice %> 
+<br>
+Nombre pelicula: <%= @movie.name %>
+<br>
+Rating: <%= @movie.rating %>
+
+<br>
+<br>
+<b>Reviews</b>
+<br>
+
+<form action="/reviews" method="post">
+	<input type="hidden" name="review[movie_id]" value="<%=@movie.id%>">
+	<textarea name="review[description]">
+	</textarea>
+	<br>
+	<input type="submit"> 
+</form>
+<% @movie.reviews.each do |review| %>
+	<%= review.description %> 
+	<br>
+<% end %>

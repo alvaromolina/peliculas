@@ -1,0 +1,9 @@
+<h1>Editar Pelicula</h1>
+
+<form action="/movies/<%=@movie.id%>/update" method="post">
+	Nombre: <input type="text" name="movie[name]" value="<%=@movie.name%>">
+	<br>
+	Rating: <input type="number" name="movie[rating]" value="<%=@movie.rating%>">
+	<br>
+	<input type="submit">
+</form>

@@ -1,0 +1,18 @@
+<h1>Nueva Pelicula</h1>
+
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form action="/movies" method="post">
+	Nombre: <input type="text" name="movie[name]" placeholder="Nombre completo">
+	<br>
+	Rating: <input type="number" name="movie[rating]">
+	<br>
+	<input type="submit">
+</form>

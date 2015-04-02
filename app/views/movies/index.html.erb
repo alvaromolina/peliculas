@@ -1,0 +1,30 @@
+Cantidad de peliculas: <%= @movies.count %> 
+
+<%= notice %>
+
+<h1>Peliculas</h1>
+<table>
+	<tr>
+		<th>Nombre
+		</th>
+		<th>Rating
+		</th>
+		<th>
+		</th>
+	</tr>
+	<% @movies.each do |movie| %>
+	<tr>
+		<td> <%= movie.name %>
+		</td>
+		<td> <%= movie.rating %> 
+		</td>
+		<td>
+			<a href="/movies/<%=movie.id%>">Ver</a>
+			<a href="/movies/<%=movie.id%>/edit">Editar</a>
+			<a href="/movies/<%=movie.id%>/delete">Borrar</a>
+		</td>
+	</tr>
+	<% end %>
+</table>
+
+<a href="/movies/new">Nueva Pelicula</a>
